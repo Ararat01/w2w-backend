@@ -1,0 +1,5 @@
+package-log.json
+
+node_modules/*
+
+.idea/*
