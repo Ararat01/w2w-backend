@@ -101,7 +101,7 @@ export const getMoviesByGenre = async (req, res) => {
 export const getAllMovies = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
-    const pageSize = 20;
+    const pageSize = 24;
     const skip = (page - 1) * pageSize;
     const collectionLength = await MovieModel.countDocuments();
     const movies = await MovieModel.aggregate([
