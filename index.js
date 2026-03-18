@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-
+import "dotenv/config";
 import {
   createMovie,
   createMany,
@@ -35,9 +35,7 @@ import checkAuth from "./utils/checkAuth.js";
 const app = express();
 
 mongoose
-  .connect(
-    "mongodb+srv://admin:pass1234@cluster0.ecvdwuu.mongodb.net/w2w?retryWrites=true&w=majority"
-  )
+  .connect(process.env.DB_URL)
   .then(() => console.log("DB is ok"))
   .catch((err) => console.log("DB error:", err));
 

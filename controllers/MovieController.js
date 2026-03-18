@@ -56,6 +56,8 @@ export const createMany = async (req, res) => {
 
 export const getMoviesByGenre = async (req, res) => {
   try {
+    console.log(req.query);
+
     const genreName = req.query.genre;
     const sortOrder = req.query.sort ? parseInt(req.query.sort) : 1;
     const sortField = req.query.sort ? "w2wRating" : "randomOrder";
